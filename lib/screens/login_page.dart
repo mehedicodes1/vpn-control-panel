@@ -1,7 +1,5 @@
-import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:vpn_control_panel/colors/colors.dart';
 
 class loginPage extends StatelessWidget {
@@ -13,7 +11,7 @@ class loginPage extends StatelessWidget {
       backgroundColor: backGroundColor,
       appBar: AppBar(
         backgroundColor: appBarColor,
-        title: const Text(
+        title: Text(
           "Control Penal",
           style: TextStyle(
               color: textColor, fontWeight: FontWeight.bold, fontSize: 20),
@@ -21,7 +19,7 @@ class loginPage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          height: 360,
+          height: 390,
           width: 350,
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
           decoration: BoxDecoration(
@@ -41,6 +39,7 @@ class loginPage extends StatelessWidget {
                 height: 20,
               ),
               TextFormField(
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   labelText: "Email",
                   hintText: "Enter email",
@@ -53,6 +52,8 @@ class loginPage extends StatelessWidget {
                 height: 10,
               ),
               TextFormField(
+                maxLength: 10,
+                keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(
                   labelText: "Password",
                   hintText: "Enter password",
@@ -87,9 +88,12 @@ class loginPage extends StatelessWidget {
                 onTap: () => launchUrl(
                     Uri.parse('https://www.linkedin.com/in/themehedisheikh/')),
                 child: Text(
-                  'Click here',
+                  '@themehedisheikh',
                   style: TextStyle(
-                      decoration: TextDecoration.underline, color: Colors.blue),
+                      decoration: TextDecoration.underline,
+                      color: Colors.blue,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
             ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vpn_control_panel/colors/colors.dart';
 
 class AppHeaderDrawer extends StatefulWidget {
   const AppHeaderDrawer({super.key});
@@ -11,7 +12,7 @@ class _AppHeaderDrawerState extends State<AppHeaderDrawer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.green,
+      color: appBarColor,
       width: double.infinity,
       height: 200,
       padding: EdgeInsets.only(top: 20.0),

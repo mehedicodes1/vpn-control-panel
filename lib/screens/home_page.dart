@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vpn_control_panel/widgets/app_drawer_header.dart';
-import 'package:vpn_control_panel/widgets/app_drawer_list.dart';
+import 'package:vpn_control_panel/colors/colors.dart';
+import 'package:vpn_control_panel/widgets/drawer.dart';
 
 class homePage extends StatelessWidget {
   const homePage({super.key});
@@ -8,25 +8,17 @@ class homePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backGroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: appBarColor,
         title: Text(
-          "Control Penal",
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          "Deshboard",
+          style: TextStyle(
+              color: textColor, fontWeight: FontWeight.bold, fontSize: 20),
         ),
       ),
-      drawer: Drawer(
-        child: SingleChildScrollView(
-          child: Container(
-            child: Column(
-              children: [
-                AppHeaderDrawer(),
-                AppDrowerList(),
-              ],
-            ),
-          ),
-        ),
-      ),
+      drawer: MyDrawer(),
+      body: Container(),
     );
   }
 }
